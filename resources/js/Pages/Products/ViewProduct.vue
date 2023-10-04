@@ -23,17 +23,14 @@ const props = defineProps({
                 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-10 p-5">
                     <div class="flex flex-row gap-x-5">
-                        <div class=" bg-red-300 w-32 h-32 max-w-xl rounded-full bg-cover
-                        bg-[url('https://www-konga-com-res.cloudinary.com/w_400,f_auto,fl_lossy,dpr_3.0,q_auto/media/catalog/product/V/D/67343_1663481920.jpg')] bg-center">
-                            
-                        </div>
+                        <img :src="product.image" class="w-[400px] rounded-xl" alt="">
                         <div class="flex flex-row justify-between">
                             <div class="flex flex-col">
                                 <h3 class="text-2xl font-bold">{{ product.name }}</h3>
                                 <div class="">
                                     {{  product.description }}
                                 </div>
-                                <p class="mt-4 font-bold">${{ product.price }}</p>
+                                <p class="mt-4 font-bold bg-gray-700 px-5 py-3 text-white rounded-full">${{ product.price }}</p>
                             </div>
                             
                         </div>

@@ -25,6 +25,7 @@ const props = defineProps({
                     <table class="table-auto">
                         <thead>
                           <tr>
+                            <th>Image</th>
                             <th class="text-left px-5 py-3">Name</th>
                             <th class="text-left px-5 py-3">Description</th>
                             <th class="text-left px-5 py-3">Price</th>
@@ -32,9 +33,10 @@ const props = defineProps({
                         </thead>
                         <tbody>
                           <tr v-for="product in products.data">
+                            <td class="px-5 py-3"><Link :href="route('products.show', product.id)"><img :src="product.image" class="w-10 h-10 rounded-full" alt=""></Link></td>
                             <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.name }}</Link></td>
-                            <td class="text-left px-5 py-3">{{ product.description }}</td>
-                            <td class="text-left px-5 py-3">{{ product.price }}</td>
+                            <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.description }}</Link></td>
+                            <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.price }}</Link></td>
                           </tr>
                         </tbody>
                       </table>

@@ -73,6 +73,16 @@ const submit = () => {
             
                             <InputError class="mt-2" :message="form.errors.price" />
                         </div>
+                        <div class="mt-4">
+                            <InputLabel value="Product Image" class="mb-1" />
+                            <TextInput
+                                id=""
+                                type="file"
+                                class="mt-1 w-full"
+                                @input="form.image = $event.target.files[0]"
+                            />
+                            <InputError class="mt-2" :message="form.errors.image" />
+                          </div>
                         <div class="flex items-center justify-end mt-4">
                             <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                                 Create Product
