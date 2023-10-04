@@ -8,6 +8,14 @@ const props = defineProps({
     products: Array
 });
 
+var excerpt = function(text, length, clamp){
+    clamp = clamp || '...';
+    var node = document.createElement('div');
+    node.innerHTML = text;
+    var content = node.textContent;
+    return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
 </script>
 
 <template>
@@ -33,9 +41,9 @@ const props = defineProps({
                         </thead>
                         <tbody>
                           <tr v-for="product in products.data">
-                            <td class="px-5 py-3"><Link :href="route('products.show', product.id)"><img :src="product.image" class="w-10 h-10 rounded-full" alt=""></Link></td>
+                            <td class="px-5 py-3 w-20"><Link :href="route('products.show', product.id)"><img :src="product.image" class="w-10 h-10 rounded-full" alt=""></Link></td>
                             <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.name }}</Link></td>
-                            <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.description }}</Link></td>
+                            <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ excerpt(product.description, 120) }}</Link></td>
                             <td class="text-left px-5 py-3"><Link :href="route('products.show', product.id)">{{ product.price }}</Link></td>
                           </tr>
                         </tbody>

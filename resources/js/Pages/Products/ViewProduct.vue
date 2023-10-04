@@ -20,7 +20,6 @@ const props = defineProps({
                         <SecondaryButton class="">Create Product</SecondaryButton>
                     </Link>
                 </div>
-                
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-10 p-5">
                     <div class="flex flex-row gap-x-5">
                         <img :src="product.image" class="w-[400px] rounded-xl" alt="">
@@ -30,7 +29,7 @@ const props = defineProps({
                                 <div class="">
                                     {{  product.description }}
                                 </div>
-                                <p class="mt-4 font-bold bg-gray-700 px-5 py-3 text-white rounded-full">${{ product.price }}</p>
+                                <p class="mt-4 font-bold bg-gray-100 text-purple-500 px-5 py-3 border border-purple-200 rounded-full w-max">${{ product.price }}</p>
                             </div>
                             
                         </div>
